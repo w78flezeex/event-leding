@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Супер Праздник! — Аниматоры для детей</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Конфетти -->
+    <div class="confetti-container" id="confetti"></div>
+
+    <!-- Хедер -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🎉</span>
+                <span>СуперПраздник</span>
+            </a>
+            <nav class="nav">
+                <a href="#heroes">Персонажи</a>
+                <a href="#calc">Цены</a>
+                <a href="#reviews">Отзывы</a>
+            </nav>
+            <a href="tel:+79001234567" class="header-phone">
+                <span class="phone-icon">📞</span>
+                +7 900 123-45-67
+            </a>
+        </div>
+    </header>
+
+    <!-- Главный экран -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="floating-element el-1">⭐</div>
+            <div class="floating-element el-2">🎈</div>
+            <div class="floating-element el-3">🎁</div>
+            <div class="floating-element el-4">🍭</div>
+            <div class="floating-element el-5">✨</div>
+            <div class="floating-element el-6">🎊</div>
+        </div>
+        
+        <div class="container hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">Делаем детство волшебным!</div>
+                <h1>Супергерои и любимые персонажи <span class="highlight">на вашем празднике!</span></h1>
+                <p class="hero-desc">Аниматоры, которые превращают обычный день рождения в незабываемое приключение. Более 50 персонажей на выбор!</p>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openModal()">
+                        <span>Заказать праздник</span>
+                        <span class="btn-emoji">🚀</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollTo('#heroes')">
+                        <span>Смотреть персонажей</span>
+                    </button>
+                </div>
+                
+                <div class="hero-trust">
+                    <div class="trust-avatars">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+                        <span class="trust-more">+847</span>
+                    </div>
+                    <span>счастливых родителей в этом году</span>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-video-wrapper">
+                    <video autoplay muted loop playsinline class="hero-video">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-little-girl-having-a-birthday-party-4953-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay"></div>
+                    <div class="video-badge">
+                        <span class="pulse"></span>
+                        Живые эмоции
+                    </div>
+                </div>
+                
+                <div class="hero-cards">
+                    <div class="hero-card card-1">
+                        <span class="card-emoji">🦸‍♂️</span>
+                        <span>Человек-паук</span>
+                    </div>
+                    <div class="hero-card card-2">
+                        <span class="card-emoji">👸</span>
+                        <span>Эльза</span>
+                    </div>
+                    <div class="hero-card card-3">
+                        <span class="card-emoji">🧸</span>
+                        <span>Хагги Вагги</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <span>Листай вниз</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Счётчики достижений -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="8">0</div>
+                    <div class="stat-label">лет радуем детей</div>
+                    <div class="stat-icon">🏆</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="2450">0</div>
+                    <div class="stat-label">проведённых праздников</div>
+                    <div class="stat-icon">🎂</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">персонажей на выбор</div>
+                    <div class="stat-icon">🎭</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">% довольных клиентов</div>
+                    <div class="stat-icon">💯</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Персонажи -->
+    <section class="heroes" id="heroes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Выбери своего героя!</h2>
+                <p>Топовые персонажи, которых обожают все дети</p>
+            </div>
+            
+            <div class="heroes-filter">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="superhero">Супергерои</button>
+                <button class="filter-btn" data-filter="princess">Принцессы</button>
+                <button class="filter-btn" data-filter="cartoon">Мультики</button>
+                <button class="filter-btn" data-filter="game">Из игр</button>
+            </div>
+            
+            <div class="heroes-grid">
+                <div class="hero-item" data-category="superhero">
+                    <div class="hero-item-img" style="background: linear-gradient(135deg, #e53935, #1e88e5);">
+                        <span class="hero-emoji">🦸‍♂️</span>
+                    </div>
+                    <div class="hero-item-content">
+                        <h3>Человек-паук</h3>
+                        <p>Акробатика, паутина, спасение мира!</p>
+                        <div class="hero-item-price">от 5 000 ₽</div>
+                    </div>
+                    <div class="hero-item-hot">ХИТ</div>
+                </div>
+                
+                <div class="hero-item" data-category="game">
+                    <div class="hero-item-img" style="background: linear-gradient(135deg, #1565c0, #00838f);">
+                        <span class="hero-emoji">🧸</span>
+                    </div>
+                    <div class="hero-item-content">
+                        <h3>Хагги Вагги</h3>
+                        <p>Большой, мягкий, обнимашечный!</p>
+                        <div class="hero-item-price">от 5 500 ₽</div>
+                    </div>
+                    <div class="hero-item-hot">НОВИНКА</div>
+                </div>
+                
+                <div class="hero-item" data-category="princess">
+                    <div class="hero-item-img" style="background: linear-gradient(135deg, #7e57c2, #29b6f6);">
+                        <span class="hero-emoji">👸</span>
+                    </div>
+                    <div class="hero-item-content">
+                        <h3>Эльза</h3>
+                        <p>Ледяное волшебство и песни!</p>
+                        <div class="hero-item-price">от 5 000 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="hero-item" data-category="superhero">
+                    <div class="hero-item-img" style="background: linear-gradient(135deg, #ffd54f, #e53935);">
+                        <span class="hero-emoji">🦸</span>
+                    </div>
+                    <div class="hero-item-content">
+                        <h3>Железный человек</h3>
+                        <p>Крутой костюм с подсветкой!</p>
+                        <div class="hero-item-price">от 6 000 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="hero-item" data-category="cartoon">
+                    <div class="hero-item-img" style="background: linear-gradient(135deg, #ffb74d, #fff176);">
+                        <span class="hero-emoji">🐕</span>
+                    </div>
+                    <div class="hero-item-content">
+                        <h3>Щенячий патруль</h3>
+                        <p>Гонщик, Маршал и команда!</p>
+                        <div class="hero-item-price">от 4 500 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="hero-item" data-category="cartoon">
+                    <div class="hero-item-img" style="background: linear-gradient(135deg, #ec407a, #f48fb1);">
+                        <span class="hero-emoji">🐱</span>
+                    </div>
+                    <div class="hero-item-content">
+                        <h3>Леди Баг</h3>
+                        <p>Супергероиня с суперсилой!</p>
+                        <div class="hero-item-price">от 5 000 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="hero-item" data-category="game">
+                    <div class="hero-item-img" style="background: linear-gradient(135deg, #ff7043, #ffab91);">
+                        <span class="hero-emoji">🦊</span>
+                    </div>
+                    <div class="hero-item-content">
+                        <h3>Фредди</h3>
+                        <p>Не страшный, а весёлый!</p>
+                        <div class="hero-item-price">от 5 500 ₽</div>
+                    </div>
+                </div>
+                
+                <div class="hero-item" data-category="princess">
+                    <div class="hero-item-img" style="background: linear-gradient(135deg, #ab47bc, #f06292);">
+                        <span class="hero-emoji">🦄</span>
+                    </div>
+                    <div class="hero-item-content">
+                        <h3>Единорог</h3>
+                        <p>Радужная магия и блёстки!</p>
+                        <div class="hero-item-price">от 4 500 ₽</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="heroes-cta">
+                <p>Не нашли нужного персонажа?</p>
+                <button class="btn btn-primary" onclick="openModal()">Напишите нам — найдём!</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Калькулятор -->
+    <section class="calculator" id="calc">
+        <div class="container">
+            <div class="calc-wrapper">
+                <div class="calc-info">
+                    <h2>Рассчитай стоимость праздника</h2>
+                    <p>Подбери идеальную программу под ваш бюджет. Честные цены без скрытых доплат!</p>
+                    
+                    <div class="calc-features">
+                        <div class="calc-feature">
+                            <span class="cf-icon">✓</span>
+                            <span>Костюмы премиум качества</span>
+                        </div>
+                        <div class="calc-feature">
+                            <span class="cf-icon">✓</span>
+                            <span>Профессиональные аниматоры</span>
+                        </div>
+                        <div class="calc-feature">
+                            <span class="cf-icon">✓</span>
+                            <span>Реквизит и спецэффекты включены</span>
+                        </div>
+                        <div class="calc-feature">
+                            <span class="cf-icon">✓</span>
+                            <span>Фотозона с декорациями</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calc-form">
+                    <div class="calc-field">
+                        <label>Количество детей</label>
+                        <div class="calc-counter">
+                            <button class="counter-btn" onclick="changeCount('kids', -1)">−</button>
+                            <input type="number" id="kids" value="10" min="1" max="50" onchange="calculate()">
+                            <button class="counter-btn" onclick="changeCount('kids', 1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-field">
+                        <label>Длительность (часы)</label>
+                        <div class="calc-counter">
+                            <button class="counter-btn" onclick="changeCount('hours', -1)">−</button>
+                            <input type="number" id="hours" value="2" min="1" max="8" onchange="calculate()">
+                            <button class="counter-btn" onclick="changeCount('hours', 1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-field">
+                        <label>Количество персонажей</label>
+                        <div class="calc-counter">
+                            <button class="counter-btn" onclick="changeCount('chars', -1)">−</button>
+                            <input type="number" id="chars" value="1" min="1" max="5" onchange="calculate()">
+                            <button class="counter-btn" onclick="changeCount('chars', 1)">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-field">
+                        <label>Дополнительно</label>
+                        <div class="calc-checkboxes">
+                            <label class="calc-checkbox">
+                                <input type="checkbox" id="bubble" onchange="calculate()">
+                                <span class="checkbox-custom"></span>
+                                <span>Шоу мыльных пузырей (+2 000 ₽)</span>
+                            </label>
+                            <label class="calc-checkbox">
+                                <input type="checkbox" id="photo" onchange="calculate()">
+                                <span class="checkbox-custom"></span>
+                                <span>Фотограф (+3 000 ₽)</span>
+                            </label>
+                            <label class="calc-checkbox">
+                                <input type="checkbox" id="balloons" onchange="calculate()">
+                                <span class="checkbox-custom"></span>
+                                <span>Оформление шарами (+2 500 ₽)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-result">
+                        <div class="calc-result-label">Итого:</div>
+                        <div class="calc-result-price" id="total-price">8 000 ₽</div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-full" onclick="openModal()">
+                        Заказать по этой цене
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Что говорят родители</h2>
+                <p>Реальные отзывы от реальных людей</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Анна" class="review-avatar">
+                        <div class="review-info">
+                            <div class="review-name">Анна Петрова</div>
+                            <div class="review-date">15 января 2026</div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">Заказывали Человека-паука на 6-летие сына. Ребёнок до сих пор в восторге! Аниматор был очень вовлечённый, игры классные, даже взрослые веселились. Однозначно будем обращаться снова!</p>
+                    <div class="review-photos">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=150&h=150&fit=crop" alt="">
+                        <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=150&h=150&fit=crop" alt="">
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Дмитрий" class="review-avatar">
+                        <div class="review-info">
+                            <div class="review-name">Дмитрий Козлов</div>
+                            <div class="review-date">8 января 2026</div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">Хагги Вагги был просто огонь! Дочка сначала немного испугалась, но потом не отходила от него весь праздник. Очень профессиональный подход, рекомендую!</p>
+                    <div class="review-photos">
+                        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=150&h=150&fit=crop" alt="">
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Елена" class="review-avatar">
+                        <div class="review-info">
+                            <div class="review-name">Елена Смирнова</div>
+                            <div class="review-date">25 декабря 2025</div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">Эльза была прекрасна! Голос, костюм, манеры — всё на высоте. Пела песни с детьми, делала "магию" — девочки были в восторге. Спасибо огромное за волшебство!</p>
+                    <div class="review-photos">
+                        <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=150&h=150&fit=crop" alt="">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=150&h=150&fit=crop" alt="">
+                        <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=150&h=150&fit=crop" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-emoji">🎉</div>
+                <h2>Готовы устроить незабываемый праздник?</h2>
+                <p>Оставьте заявку — мы перезвоним за 5 минут и поможем подобрать идеальную программу</p>
+                <button class="btn btn-white" onclick="openModal()">
+                    Заказать сейчас
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">🎉</span>
+                        <span>СуперПраздник</span>
+                    </a>
+                    <p>Делаем детство волшебным с 2018 года</p>
+                </div>
+                <div class="footer-contacts">
+                    <a href="tel:+79001234567" class="footer-phone">+7 900 123-45-67</a>
+                    <div class="footer-socials">
+                        <a href="#">VK</a>
+                        <a href="#">TG</a>
+                        <a href="#">WA</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 СуперПраздник. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div class="modal-header">
+                <h3>Заказать праздник</h3>
+                <p>Оставьте номер — перезвоним за 5 минут!</p>
+            </div>
+            <form class="modal-form" onsubmit="submitForm(event)">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                <input type="date" placeholder="Дата праздника">
+                <textarea placeholder="Пожелания (персонаж, количество детей)"></textarea>
+                <button type="submit" class="btn btn-primary btn-full">Отправить заявку</button>
+            </form>
+            <div class="modal-success" id="modal-success">
+                <div class="success-icon">🎉</div>
+                <h3>Заявка отправлена!</h3>
+                <p>Мы перезвоним вам в течение 5 минут</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
